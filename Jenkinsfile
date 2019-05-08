@@ -70,6 +70,10 @@ node('nodejs') {
    //             serviceId: params.MICROCKS_SERVICE_ID,
    //             testEndpoint: params.MICROCKS_TEST_ENDPOINT,
    //             runnerType: 'POSTMAN', verbose: 'true')
+        openshiftTag alias: 'false', destStream: params.OPENSHIFT_IMAGE_STREAM, srcTag: "${newVersion}",
+                 destinationNamespace: params.OPENSHIFT_PROD_ENVIRONMENT, namespace: params.OPENSHIFT_BUILD_PROJECT,
+                 srcStream: params.OPENSHIFT_IMAGE_STREAM, destTag: 'done integration tests', verbose: 'false'
+
   }
 
   stage('Deploy API to prod') {
