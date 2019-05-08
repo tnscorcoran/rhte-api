@@ -22,13 +22,6 @@ paths:
       responses:
         200:
           description: OK
-  /participants:
-    get:
-      summary: participants
-      description: participants
-      operationId: participants
-      responses:
-        200: {}
 securityDefinitions:
   apikey:
     type: apiKey
