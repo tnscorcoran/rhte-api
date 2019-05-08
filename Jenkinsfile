@@ -66,10 +66,10 @@ node('nodejs') {
   }
 
   stage('Run Integration Tests') {
-    microcksTest(apiURL: params.MICROCKS_SERVER_URL,
-                serviceId: params.MICROCKS_SERVICE_ID,
-                testEndpoint: params.MICROCKS_TEST_ENDPOINT,
-                runnerType: 'POSTMAN', verbose: 'true')
+   // microcksTest(apiURL: params.MICROCKS_SERVER_URL,
+   //             serviceId: params.MICROCKS_SERVICE_ID,
+   //             testEndpoint: params.MICROCKS_TEST_ENDPOINT,
+   //             runnerType: 'POSTMAN', verbose: 'true')
   }
 
   stage('Deploy API to prod') {
